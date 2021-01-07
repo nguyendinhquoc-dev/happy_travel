@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.example.happytravelapp.ultil.Common"/>
+        <variable
+            name="postVM"
+            type="com.example.happytravelapp.viewmodel.PostViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:context=".view.CreatNewFeedActivity">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilePic"
+                imageUrl="@{Common.IMAGE_URL}"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_image_black_24dp"
+                />
+
+            <TextView
+                android:id="@+id/fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/profilePic"
+                android:editable="false"
+                android:padding="5dp"
+                android:text="@{Common.FULLNAME}" />
+        </RelativeLayout>
+        <EditText
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="10"
+            android:maxLines="10"
+            android:gravity="top|left"
+            android:text="@={postVM.body}"
+            android:hint="Bạn đang nghĩ gì"/>
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={postVM.title}"
+            android:hint="Tiêu đề"/>
+        <ImageView
+            android:id="@+id/imageUrl"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            imageUrl="@{postVM.imageUrl}"
+            android:layout_toRightOf="@id/photoPickerButton"
+            android:contentDescription="photo" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+            <ImageButton
+                android:id="@+id/photoPickerButton"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/ic_image_black_24dp"
+                android:contentDescription="photo" />
+
+
+
+            <Button
+                android:id="@+id/sendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:enabled="false"
+                android:onClick="@{()->postVM.writeNewPost()}"
+                android:text="@string/write_button_label" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

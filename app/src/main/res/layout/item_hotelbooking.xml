@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="hotelbooking"
+            type="com.example.happytravelapp.model.HotelBooking" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/box_shadow"
+        >
+
+        <LinearLayout
+            android:id="@+id/llitem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="2dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageUrl"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/booking"
+
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bookingId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:text="@{hotelbooking.bookingId}"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+
+                    tools:text="@string/booking_id" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Khách sạn:" />
+
+                    <TextView
+                        android:id="@+id/hotelname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{hotelbooking.hotelName}"
+                        android:textColor="@color/black"
+                        android:maxLines="1"
+                        tools:text="@string/hotel_id" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Loại phòng:" />
+
+                    <TextView
+                        android:id="@+id/roomTypeName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{hotelbooking.roomtypeName}"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+
+                        tools:text="@string/room_id" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Check in:" />
+
+                    <TextView
+                        android:id="@+id/checkinDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{hotelbooking.checkinDate}"
+                        android:textColor="#5E5D5D"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+
+                        tools:text="@string/checkin_date" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+
+                        android:text="Check out:" />
+
+                    <TextView
+                        android:id="@+id/checkoutDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{hotelbooking.checkoutDate}"
+                        android:textColor="#5E5D5D"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+
+                        tools:text="@string/checkout_date" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trạng thái:" />
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{hotelbooking.status.toString()}"
+                        android:textColor="#F83746"
+                        android:maxLines="1"
+
+                        android:textStyle="bold"
+                        tools:text="@string/checkout_date" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "446291197813",
+    "firebase_url": "https://travel-app-a6195.firebaseio.com",
+    "project_id": "travel-app-a6195",
+    "storage_bucket": "travel-app-a6195.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446291197813:android:66847b2a7f1bc5e7d85d3c",
+        "android_client_info": {
+          "package_name": "com.example.happytravelapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446291197813-qi58upmon9p4oie8ahi6chg4jb0rkbqk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.happytravelapp",
+            "certificate_hash": "bc33a3e83135f57327b6c34df94f52da7910dd66"
+          }
+        },
+        {
+          "client_id": "446291197813-4uejlu6tjln17jmotksj2ohsehmk7rn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUGT91JmHQWAscs8ttgqbT1cH1DpvHq2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446291197813-4uejlu6tjln17jmotksj2ohsehmk7rn6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

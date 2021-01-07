@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="androidx.databinding.DataBindingUtil"/>
+        <variable
+            name="post"
+            type="com.example.happytravelapp.model.Post" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/feed_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+            android:layout_marginLeft="@dimen/feed_item_margin"
+            android:layout_marginTop="@dimen/feed_item_margin"
+            android:layout_marginRight="@dimen/feed_item_margin"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/feed_item_padding_top_bottom"
+            android:paddingBottom="@dimen/feed_item_padding_top_bottom">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/feed_item_padding_left_right"
+                android:paddingRight="@dimen/feed_item_padding_left_right">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profilePic"
+                    imageUrl="@{post.profilePic}"
+                    android:layout_width="@dimen/feed_item_profile_pic"
+                    android:layout_height="@dimen/feed_item_profile_pic">
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/feed_item_profile_info_padd">
+
+                    <TextView
+                        android:id="@+id/fullname"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{post.author}"
+                        android:textSize="@dimen/feed_item_profile_name"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/timestamp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        bindServerDate="@{post.timestamp}"
+                        android:textColor="@color/timestamp"
+                        android:textSize="@dimen/feed_item_timestamp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tittle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/feed_item_status_pad_left_right"
+                android:paddingTop="@dimen/feed_item_status_pad_top"
+                android:paddingRight="@dimen/feed_item_status_pad_left_right"
+                android:paddingBottom="5dp"
+                android:text="@{post.title}" />
+
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:linksClickable="true"
+                android:paddingLeft="@dimen/feed_item_status_pad_left_right"
+                android:paddingRight="@dimen/feed_item_status_pad_left_right"
+                android:paddingBottom="10dp"
+                android:text="@{post.body}"
+                android:textColorLink="@color/link" />
+
+            <ImageView
+                android:id="@+id/feedImage1"
+                imageUrl='@{post.imageUrl}'
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="200dp"
+                android:background="@color/white"
+                android:scaleType="fitXY"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/feed_item_padding_left_right"
+                android:layout_marginTop="15dp"
+                android:paddingRight="@dimen/feed_item_padding_left_right">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:padding="5dp">
+                    <TextView
+                        android:id="@+id/post_num_stars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{post.starCount}"
+                        tools:text="7"/>
+
+                    <ImageView
+                        android:id="@+id/like"
+                        android:layout_width="@dimen/feed_icon"
+                        android:layout_height="@dimen/feed_icon"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/favourite_selector"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Like" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                   android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/post_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{post.commentCount}"
+                        tools:text="7"/>
+
+                    <ImageView
+                        android:id="@+id/comment"
+                        android:layout_width="@dimen/feed_icon"
+                        android:layout_height="@dimen/feed_icon"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_comment_black_24dp"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Comment" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

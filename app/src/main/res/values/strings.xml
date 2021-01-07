@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Happy travel</string>
+    <string name="title_main">Home</string>
+    <string name="title_feed">Feed</string>
+    <string name="title_inbox">Inbox</string>
+    <string name="title_favourite">Fovourite</string>
+    <string name="title_account">Account</string>
+    <string name="toolbar_main">Đặt phòng</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_logout">Logout</string>
+    <string name="account_info">Thông tin người dùng</string>
+    <string name="cooperate">Bạn có khách sạn muốn hợp tác</string>
+    <string name="booking_manager">Quản lý booking</string>
+
+    <string name="error_invalid_name">Tên ít nhất 3 ký tự</string>
+    <string name="error_invalid_email">Email không đúng</string>
+    <string name="error_invalid_phone">Phone không đúng</string>
+    <string name="error_invalid_password">Password ít nhất 6 ký tự</string>
+    <string name="error_not_matching">Password not matching</string>
+    <string name="error_invalid_gender">Chọn giới tính</string>
+    <string name="hotelname">LyLy</string>
+    <string name="item_provine">Hà Nội</string>
+    <string name="item_district">Quận Ba Đình</string>
+    <string name="hotel_detail">Chi tiết khách sạn</string>
+    <string name="item_room_type">Vip 1</string>
+    <string name="item_capacity">8</string>
+    <string name="item_roomtype_description">Phòng vip dành cho 8 người</string>
+    <string name="title_addbooking">Đặt khách sạn</string>
+    <string name="booking_id">#1</string>
+    <string name="hotel_id">lyly</string>
+    <string name="room_id">vip room</string>
+    <string name="checkin_date">28-10-2020</string>
+    <string name="checkout_date">29-10-2020</string>
+
+    <string name="textHint">Type a message</string>
+    <string name="send_button_label">Gửi</string>
+    <string name="senderId">#1233</string>
+    <string name="message">hihi</string>
+
+    <string name="a11y_plant_item_image" translation_description="Accessibility text for each of the plant images shown in the 'My garden' and 'Plant list' screens.">Picture of plant</string>
+    <string name="write_button_label">Đăng</string>
+    <string name="default_notification_channel_id">1</string>
+    <string name="default_notification_channel_name">chanel1</string>
+    <string name="fcm_message">hi</string>
+
+
+</resources>

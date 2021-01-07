@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.happytravelapp.viewmodel.HotelViewModel"/>
+        <variable
+            name="inbox"
+            type="com.example.happytravelapp.model.Inbox" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/llitem"
+        android:background="@drawable/box_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+android:layout_marginBottom="10dp"        app:cardUseCompatPadding="true">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageUrl"
+            imageUrl='@{inbox.profilePictureReceiver}'
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            tools:ignore="ContentDescription"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_account_box_black_24dp"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="1dp" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imageUrl"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    tools:text="Người nhận :"
+                    android:layout_marginTop="20dp"/>
+                <TextView
+
+                    android:id="@+id/receiver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{inbox.receiverName}'
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    tools:text="@string/hotelname" />
+
+            </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

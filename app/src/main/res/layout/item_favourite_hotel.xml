@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.happytravelapp.viewmodel.HotelViewModel"/>
+        <variable
+            name="favoutite"
+            type="com.example.happytravelapp.model.FavouriteHotel" />
+    </data>
+
+
+
+        <RelativeLayout
+            android:id="@+id/llitem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:background="@drawable/box_shadow"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+           >
+
+            <ImageView
+                android:id="@+id/imageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                imageUrl="@{favoutite.hotel.imageUrl}"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_below="@+id/imageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="7dp"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/hotelname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{favoutite.hotel.hotelName}"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:maxLines="1"
+                    tools:text="@string/item_provine" />
+
+                <TextView
+                    android:id="@+id/adress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{favoutite.hotel.address}"
+                    android:textColor="@color/colorShadow"
+                    android:maxLines="1"
+                    android:textSize="14dp"
+                    tools:text="@string/item_district" />
+            </LinearLayout>
+
+            <ToggleButton
+                android:id="@+id/favourite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:focusable="false"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:checked="@{favoutite.favourite}"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical|end"
+                android:focusableInTouchMode="false"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/favourite_selector"
+                android:textOff=""
+                android:textOn=""/>
+
+        </RelativeLayout>
+
+</layout>

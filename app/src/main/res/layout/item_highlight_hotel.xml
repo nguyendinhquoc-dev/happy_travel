@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="favouritehotelVM"
+            type="com.example.happytravelapp.viewmodel.FavouriteHotelViewmodel"/>
+        <variable
+            name="hotel"
+            type="com.example.happytravelapp.model.Hotel" />
+    </data>
+
+
+
+        <RelativeLayout
+            android:background="@drawable/box_shadow"
+            android:id="@+id/llitem"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:id="@+id/imageUrl"
+                imageUrl="@{hotel.imageUrl}"
+                android:layout_marginTop="17dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_below="@+id/imageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginBottom="7dp">
+
+                <TextView
+                    android:id="@+id/hotelname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{hotel.hotelName}"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="13dp"
+                    android:lines="1"
+                    tools:text="@string/hotelname" />
+
+                <TextView
+                    android:id="@+id/provine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{hotel.provine}"
+                    android:textColor="@color/colorShadow"
+                    android:textSize="10dp"
+                    android:maxLines="1"
+                    tools:text="@string/item_provine" />
+
+                <TextView
+                    android:id="@+id/district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{hotel.district}"
+                    android:textColor="@color/colorShadow"
+                   android:textSize="10dp"
+                    android:maxLines="1"
+                    tools:text="@string/item_district" />
+            </LinearLayout>
+
+            <ToggleButton
+                android:id="@+id/favourite"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:focusable="false"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_gravity="center_vertical|end"
+                android:focusableInTouchMode="false"
+                android:background="@drawable/favourite_selector"
+                android:layout_alignParentRight="true"
+                android:textOff=""
+                android:textOn=""/>
+
+        </RelativeLayout>
+
+</layout>
